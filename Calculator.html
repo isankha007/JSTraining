@@ -26,9 +26,11 @@
 					      expressionVal=parseInt(o1)-parseInt(o2);
 					  else if(operator=="/")
 					      expressionVal=parseInt(o1)/parseInt(o2);
-					  else if(operator="*")
+					  else if(operator="X")
 					      expressionVal=parseInt(o1)*parseInt(o2);
 					   document.getElementById('n2').value=expressionVal;
+					  o1="";
+					 o2="";
 					   return;
 					 }
 					 if(this.value=="C"){
@@ -99,7 +101,7 @@
 	   <input type="button" name="btn" value="-" id="btn11">
 	   <input type="button" name="btn" value="/" id="btn12">
 	   <br>
-	   <input type="button" name="btn" value="*" id="btn13">
+	   <input type="button" name="btn" value="X" id="btn13">
 	   <input type="button" name="btn" value="=" id="btn14">
 	   <input type="button" name="btn" value="+" id="btn15">
 	   <input type="button" name="btn" value="C" id="btn16">
