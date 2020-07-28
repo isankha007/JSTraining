@@ -46,11 +46,17 @@
 					 if(parseInt(this.value)){
 					   //  if(parseInt(expressionVal))
 					   {
-					   if(parseInt(o1)){
-					      o2 =this.value;
+					   if(operator!=""){
+					     if(parseInt(o2))
+					       o2 =o2+this.value;
+					    else
+							o2=this.value;
 						  document.getElementById('n1').value=o2;
 					   }else{
-					      o1 =this.value;
+					       if(parseInt(o1))
+					        o1 =o1+this.value;
+					    else
+							o1=this.value;
 						  document.getElementById('n1').value=o1;
 					   }
 				         //  expressionVal = parseInt(expressionVal)+parseInt(this.value);
