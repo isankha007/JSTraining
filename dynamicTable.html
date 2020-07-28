@@ -41,11 +41,11 @@
 				 tr=thsrt;
                 for (var i = 0; i < arrEmps.length; i++) {
 				var keys=Object.keys(arrEmps[i]);
-				   tr += '<tr><td>' 
+				   tr += '<tr>'; 
 				   for(var j = 0; j < keys.length; j++){
-                    tr +=  arrEmps[i][keys[j]]+ '</td><td>';// + arrEmps[keys] + '</td><td>' + arrEmps[i] + '</td></tr>';
+                    tr +=  '<td>'+arrEmps[i][keys[j]]+ '</td>';// + arrEmps[keys] + '</td><td>' + arrEmps[i] + '</td></tr>';
 					}
-					tr+='</td></tr>';
+					tr+='</tr>';
 					//tr +=;
 					document.getElementById('tbody').innerHTML = tr;
                 }
