@@ -8,19 +8,19 @@
     <script src="./demoarray.js"></script>
     <script>
         window.onload = function() {
-            var lstNames = document.getElementById('lstNames');
-            var options = '';
-            for (var i = 0; i < arrString.length; i++) {
-                options += '<option value=' + arrString[i] + '>' + arrString[i] + '</option>';
-            }
+            //var lstNames = document.getElementById('lstNames');
+            //var options = '';
+           // for (var i = 0; i < arrString.length; i++) {
+             //   options += '<option value=' + arrString[i] + '>' + arrString[i] + '</option>';
+           // }
             // assign the options data to the lstNames
             // using 'innerHTML' property we can dynamicaaly add HTML DOM to the element
-            lstNames.innerHTML = options;
+           // lstNames.innerHTML = options;
 
             // writing the change event of the 'select'
-            lstNames.addEventListener('change', function() {
+            /*lstNames.addEventListener('change', function() {
                 alert('Selected value = ' + this.options[this.selectedIndex].value);
-            }, false);
+            }, false);*/
 
             // calling the function
             gnerateTable(arrEmps);
@@ -53,7 +53,7 @@
                 
             }
 
-            document.getElementById('btnAddEmp').addEventListener('click', function() {
+           /* document.getElementById('btnAddEmp').addEventListener('click', function() {
                 arrEmps.push({
                     EmpNo: 5,
                     EmpName: 'Prashant',
@@ -62,15 +62,15 @@
                 console.log(JSON.stringify(arrEmps));
                 gnerateTable(arrEmps);
 
-            }, false);
+            }, false);*/
         }
     </script>
 </head>
 
 <body>
-    <select id="lstNames"></select>
+    <!--<select id="lstNames"></select>-->
     <hr>
-    <input type="button" value="Add Emp" id="btnAddEmp">
+    <!--<input type="button" value="Add Emp" id="btnAddEmp">-->
     <br>
     <table border="double">
    
