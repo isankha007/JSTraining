@@ -56,20 +56,43 @@ function page_onload(){
             }
 			
 			document.getElementById('btnCreate').addEventListener('click', function() {
-                var prod = { ProductRowId: 110, ProductId: 'P1', ProductName: 'p1',CategoryName:"C1",Manufacturer:"m1",Description:"D1",BasePrice:'BasePrice1'};
+				//var table = document.getElementById('table1');
+				//var lastRow = table.rows[ table.rows.length - 1 ];
+				//var column5Row3 = table.rows[lastRow].cells[0].innerHTML;
+				var prodrowID=arrProd[arrProd.length-1].ProductRowId+1;
+				var prodID=document.getElementById("prodID").value;
+				var prodName=document.getElementById("prodName").value;
+				var prodCat=document.getElementById("prodCat").value;
+				var ProdDescription=document.getElementById("ProdDescription").value;
+				var prodManu=document.getElementById("prodManu").value;
+				var prodBasePrice=document.getElementById("prodBasePrice").value;
+                var prod = { ProductRowId: prodrowID, ProductId: prodID, ProductName: prodName,CategoryName:prodCat,Manufacturer:prodManu,Description:ProdDescription,BasePrice:prodBasePrice};
 				pObj.addProduct(prod);
-				 arrProd=pObj.getPorducts();
+				arrProd=pObj.getPorducts();
 				arrCat=pObj.getCategory();
 				arrMan=pObj.getManufacture();
 				selectOptCat(arrCat);
 				selectOptMan(arrMan);
 				gnerateTable(arrProd);
-                //gnerateTable(arrEmps);
 
             }, false);
 			
-		document.getElementById('btnUpdate').addEventListener('click', function() {
-           
+			document.getElementById('btnUpdate').addEventListener('click', function() {
+              /* var prodrowID=arrProd[arrProd.length-1].ProductRowId+1;
+				var prodID=document.getElementById("prodID").value;
+				var prodName=document.getElementById("prodName").value;
+				var prodCat=document.getElementById("prodCat").value;
+				var ProdDescription=document.getElementById("ProdDescription").value;
+				var prodManu=document.getElementById("prodManu").value;
+				var prodBasePrice=document.getElementById("prodBasePrice").value;
+                var prod = { ProductRowId: prodrowID, ProductId: prodID, ProductName: prodName,CategoryName:prodCat,Manufacturer:prodManu,Description:ProdDescription,BasePrice:prodBasePrice};
+				pObj.addProduct(prod);
+				arrProd=pObj.getPorducts();
+				arrCat=pObj.getCategory();
+				arrMan=pObj.getManufacture();
+				selectOptCat(arrCat);
+				selectOptMan(arrMan);
+				gnerateTable(arrProd);*/
 
             }, false);
 }
