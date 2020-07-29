@@ -16,13 +16,13 @@ function ProductLogic() {
 		getCategory:function(){
 			var arrCat;
 			for(p in products ){
-			   arrCat.push(p.CategoryName);
+			   arrCat.push(products[p].CategoryName);
 			}
 		},
 		getCategory:function(){
 			var arrManu;
 			for(p in products ){
-			   arrManu.push(p.CategoryName);
+			   arrManu.push(products[p].Manufacturer);
 			}
 		},
         addProduct: function(prd) {
