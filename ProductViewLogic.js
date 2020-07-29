@@ -1,5 +1,5 @@
 function page_onload(){
-	 var pObj = new ProductLogic();
+	       var pObj = new ProductLogic();
 		   arrProd=pObj.getPorducts();
 		   arrCat=pObj.getCategory();
 		   arrMan=pObj.getManufacture();
@@ -54,4 +54,28 @@ function page_onload(){
 				
                 
             }
+			
+			document.getElementById('btnCreate').addEventListener('click', function() {
+                var prod = { ProductRowId: 110, ProductId: 'P1', ProductName: 'p1',CategoryName:"C1",Manufacturer:"m1",Description:"D1",BasePrice:'BasePrice1'};
+				pObj.addProduct(prod);
+				 arrProd=pObj.getPorducts();
+				arrCat=pObj.getCategory();
+				arrMan=pObj.getManufacture();
+				selectOptCat(arrCat);
+				selectOptMan(arrMan);
+				gnerateTable(arrProd);
+                //gnerateTable(arrEmps);
+
+            }, false);
+			
+			document.getElementById('btnUpdate').addEventListener('click', function() {
+                arrEmps.push({
+                    EmpNo: 5,
+                    EmpName: 'Prashant',
+                    Salary: 4555
+                });
+                console.log(JSON.stringify(arrEmps));
+                gnerateTable(arrEmps);
+
+            }, false);
 }
