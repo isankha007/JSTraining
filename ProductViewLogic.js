@@ -68,14 +68,8 @@ function page_onload(){
 
             }, false);
 			
-			document.getElementById('btnUpdate').addEventListener('click', function() {
-                arrEmps.push({
-                    EmpNo: 5,
-                    EmpName: 'Prashant',
-                    Salary: 4555
-                });
-                console.log(JSON.stringify(arrEmps));
-                gnerateTable(arrEmps);
+		document.getElementById('btnUpdate').addEventListener('click', function() {
+           
 
             }, false);
 }
