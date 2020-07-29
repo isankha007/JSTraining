@@ -9,7 +9,7 @@ function page_onload(){
 			
 			///Generate options
 			function selectOptCat(arrCat){
-				var slStr="<select id='positions' onchange='onClickSelect()'>";
+				var slStr//="<select id='selectCat' onchange='onClickSelect()'>";
 				for (var i=0; i <arrCat.length; i++)
 				{
 				slStr+="<option>" + arrCat[i] + "</option>";
@@ -19,7 +19,7 @@ function page_onload(){
 			}
 			
 			function selectOptMan(arrMan){
-				var slStr="<select id='positions' onchange='onClickSelect()'>";
+				var slStr//="<select id='selectMan' onchange='onClickSelect()'>";
 				for (var i=0; i <arrMan.length; i++)
 				{
 				slStr+="<option>" + arrMan[i] + "</option>";
