@@ -45,7 +45,7 @@ function page_onload(){
 				var keys=Object.keys(arrProd[i]);
 				   tr += '<tr>'; 
 				   for(var j = 0; j < keys.length; j++){
-                    tr +=  '<td>'+arrProd[i][keys[j]];
+                    tr +=  '<td onclick="getId(this)">'+arrProd[i][keys[j]];
 					}
 					tr+= '</td>'+'<td><input type="button" id="delPOIbutton" value="Delete" onclick="deleteRow(this)"/></td></tr>';
 					//tr +=;
@@ -95,4 +95,30 @@ function page_onload(){
 				gnerateTable(arrProd);*/
 
             }, false);
+			
+			function  getId(element) {
+				console.log("Cliked this row ");
+				alert("row" + element.parentNode.parentNode.rowIndex + 
+				" - column" + element.parentNode.cellIndex);
+			}
+			
+			   
+			
+			document.getElementById('sortIDs').addEventListener('change', function() {
+                alert('Clicked prodCat');
+
+            }, false);
+			
+			
+			//Comparer Function    
+		  function GetSortOrder(prop) {    
+			return function(a, b) {    
+				if (a[prop] > b[prop]) {    
+					return 1;    
+				} else if (a[prop] < b[prop]) {    
+					return -1;    
+				}    
+				return 0;    
+			}    
+}    
 }
