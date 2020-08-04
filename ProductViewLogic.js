@@ -105,7 +105,14 @@ function page_onload(){
 			   
 			
 			document.getElementById('sortIDs').addEventListener('change', function() {
-                alert('Clicked prodCat');
+				var ele = document.getElementsByName('sortID'); 
+                for(i = 0; i < ele.length; i++) { 
+                if(ele[i].checked) 
+                 alert('Clicked '+ele[i].value);
+			     pObj.sortProduct(ele[i].value,);
+			     
+            } 
+               
 
             }, false);
 			
