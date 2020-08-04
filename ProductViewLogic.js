@@ -18,10 +18,14 @@ function  getId(element) {
 			
 			
  function deleteRow(element){
-				 var myJSON = JSON.stringify(element);
-                 console.log(myJSON);
-				 alert("  "+element.id);
-			    } 		
+				// var myJSON = JSON.stringify(element);
+                 //console.log(myJSON);
+				 //alert("  "+element.id);
+				arrProd=pObj.deleteProduct(arrProd[element.id]);
+				gnerateTable(arrProd);
+
+				 
+} 		
 
 
 ///Generate options
