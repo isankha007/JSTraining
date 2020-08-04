@@ -76,6 +76,7 @@ function ProductLogic() {
 					products.splice(p, 1);;
 			      // products[p]=prd;
 				  //remove object
+				  break;
 				}
 			}
             return products;
