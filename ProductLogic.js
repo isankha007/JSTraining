@@ -38,6 +38,19 @@ function ProductLogic() {
 				}
 			}
             return products;
-        }
+        },
+		sortProduct: function(key) {
+            //sort logic here with the key
+            return products;
+        },
+		deleteProduct: function(prd) {
+            for(p in products ){
+				if(products[p].ProductRowId==prd.ProductRowId){
+			      // products[p]=prd;
+				  //remove object
+				}
+			}
+            return products;
+        },
     };
 }
