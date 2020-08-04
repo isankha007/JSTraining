@@ -6,15 +6,14 @@ var indexSelected=0;
 function  getId(element) {
 				console.log("Cliked this row ");
 				//alert("row "+element.id);
-				var prodrowID=arrProd[element.id].ProductRowId;
+				document.getElementById("prodrowID").value=arrProd[element.id].ProductRowId;
 				document.getElementById("prodID").value=arrProd[element.id].ProductId;
 				document.getElementById("prodName").value=arrProd[element.id].ProductName;
 				document.getElementById("selectCat").value=arrProd[element.id].CategoryName;
 				document.getElementById("ProdDescription").value=arrProd[element.id].Description;
 				document.getElementById("selectMan").value=arrProd[element.id].Manufacturer;
 				document.getElementById("prodBasePrice").value=arrProd[element.id].BasePrice;
-				var prod = { ProductRowId: prodrowID, ProductId: prodID, ProductName: prodName,CategoryName:prodCat,Manufacturer:prodManu,Description:ProdDescription,BasePrice:prodBasePrice};
-				//pObj.updateProduct(prod);
+
 			}	
 			
 			
@@ -104,20 +103,20 @@ function page_onload(){
             }, false);
 			
 			document.getElementById('btnUpdate').addEventListener('click', function() {
-                var prodrowID=arrProd[arrProd.length-1].ProductRowId+1;
+                var prodrowID=document.getElementById("prodrowID").value;
 				var prodID=document.getElementById("prodID").value;
 				var prodName=document.getElementById("prodName").value;
-				var prodCat=document.getElementById("prodCat").value;
+				var prodCat=document.getElementById("selectCat").value;
 				var ProdDescription=document.getElementById("ProdDescription").value;
-				var prodManu=document.getElementById("prodManu").value;
+				var prodManu=document.getElementById("selectMan").value;
 				var prodBasePrice=document.getElementById("prodBasePrice").value;
                 var prod = { ProductRowId: prodrowID, ProductId: prodID, ProductName: prodName,CategoryName:prodCat,Manufacturer:prodManu,Description:ProdDescription,BasePrice:prodBasePrice};
-				pObj.addProduct(prod);
+				pObj.updateProduct(prod);
 				arrProd=pObj.getPorducts();
-				arrCat=pObj.getCategory();
-				arrMan=pObj.getManufacture();
-				selectOptCat(arrCat);
-				selectOptMan(arrMan);
+				//arrCat=pObj.getCategory();
+				//arrMan=pObj.getManufacture();
+				//selectOptCat(arrCat);
+				//selectOptMan(arrMan);
 				gnerateTable(arrProd);
 
             }, false);
