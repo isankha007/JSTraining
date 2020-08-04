@@ -47,14 +47,41 @@ function page_onload(){
 				   for(var j = 0; j < keys.length; j++){
                     tr +=  '<td onclick="getId(this)">'+arrProd[i][keys[j]];
 					}
-					tr+= '</td>'+'<td><input type="button" id="delPOIbutton" value="Delete" onclick="deleteRow(this)"/></td></tr>';
+					tr+= '</td>'+'<td><input type="button" value="Delete" id="'+j+'" "/></td></tr>';
 					//tr +=;
 					document.getElementById('tbody').innerHTML = tr;
                 }
-				
-                
+				/*
+			     document.getElementById(j).addEventListener('click', function() {
+				   var td = this.parentNode; 
+                  var tr = td.parentNode; // the row
+				  alert("Delete"+ this.value);
+			     
+            }, false);*/
+			/*
+                function deleteRow(row){
+				// var colValue= this.dataItem($(e.currentTarget).closest("tr"));
+				 var myJSON = JSON.stringify(tableRow);
+                 console.log(myJSON);
+				 alert(colValue);
+			    } */
             }
-			
+			/*
+			document.getElementById('delPOIbutton').addEventListener('click', function() {
+				var td = this.parentNode; 
+                var tr = td.parentNode; // the row
+				alert("Delete"+ this.value);
+			     
+            }, false);*/
+		
+			/*
+			function deleteRow(row){
+				// var colValue= this.dataItem($(e.currentTarget).closest("tr"));
+				 var myJSON = JSON.stringify(tableRow);
+                 console.log(myJSON);
+				 alert(colValue);
+			}*/
+			//dummyArray[result.value[i].position-1][unassignIndex].splice(j, 1);;
 			document.getElementById('btnCreate').addEventListener('click', function() {
 				//var table = document.getElementById('table1');
 				//var lastRow = table.rows[ table.rows.length - 1 ];
@@ -108,8 +135,10 @@ function page_onload(){
 				var ele = document.getElementsByName('sortID'); 
                 for(i = 0; i < ele.length; i++) { 
                 if(ele[i].checked) 
-                 alert('Clicked '+ele[i].value);
-			     pObj.sortProduct(ele[i].value,);
+                // alert('Clicked '+ele[i].value);
+			     var keyName= ele[i].value=="prodCat"?"CategoryName":"Manufacturer";
+			     var arrS = pObj.sortProduct(keyName);
+				 gnerateTable(arrS)
 			     
             } 
                
