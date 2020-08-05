@@ -29,7 +29,7 @@ function  getId(element) {
 
 
 ///Generate options
-			function selectOptCat(arrCat){
+	function selectOptCat(arrCat){
 				var slStr//="<select id='selectCat' onchange='onClickSelect()'>";
 				for (var i=0; i <arrCat.length; i++)
 				{
@@ -76,7 +76,35 @@ function  getId(element) {
                 }
 			
                
-            }				
+ }	
+var url = 'https://apiapptrainingnewapp.azurewebsites.net/api/Products';
+
+function loadData() {
+                var http = new XMLHttpRequest();
+                // define the request metadata
+                // method: GET/ POST/ PUT/ DELETE
+                // url: http/https url of the server
+                // 
+                http.open('GET', url);
+                // subscribe to the response to be received from the AJAX call
+                http.onload = function(evt) {
+                    if (this.status == 200) {
+                        var products = this.response;
+						prd=JSON.parse(products);
+						for(var i =0;i<prd.length;i++){
+						         pObj.addProduct(prd[i]);
+						       }
+				              gnerateTable(arrProd);
+                              console.log(JSON.stringify(products));
+                    } else {
+                        console.log('Response is not success')
+                    }
+                };
+                http.onerror = function(evt) {
+                    console.log('Error Occured in AJAX call ' + evt);
+                }
+                http.send(); // start the request
+            }			
 
 function page_onload(){
 			arrProd=pObj.getPorducts();
@@ -85,6 +113,7 @@ function page_onload(){
 		    selectOptCat(arrCat);
 			selectOptMan(arrMan);
             gnerateTable(arrProd);
+			loadData();
 		
 			document.getElementById('btnCreate').addEventListener('click', function() {
 
