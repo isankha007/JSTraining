@@ -8,65 +8,7 @@
     <script src="./ProductLogic.js"></script>
 	<script src="./ProductViewLogic.js"></script>
     <script>
-        //window.onload = function() {
-          /* var pObj = new ProductLogic();
-		   arrProd=pObj.getPorducts();
-		    selectOpt();
-            gnerateTable(arrProd);
-			
-			///Generate options
-			function selectOpt(){
-				var limitOfRows=16;
-				var positions = 0;
-				var slStr="<select id='positions' onchange='onClickSelect()'>";
-				//document.write("<select id='positions' onchange='onClickSelect()'>");
-				for (var i=0; i <limitOfRows; i++)
-				{
-				positions++;
-				slStr+="<option>" + positions + "</option>";
-				}
-                slStr+="</select>"
-               document.getElementById('select').innerHTML = slStr;
-			}
-            // a function to generate table
-            function gnerateTable(arrProd) {
-               
-				var keys1=Object.keys(arrProd[0]);
-				var thsrt='<thead>';
-				 thsrt += '<tr>' 
-				 for(var j = 0; j < keys1.length; j++)
-				 {
-                    thsrt +=  '<th>'+keys1[j]+ '</th>';// + arrProd[keys] + '</td><td>' + arrProd[i] + '</td></tr>';
-			      }
-				  thsrt += '</tr></th></thead>';
-				 // document.getElementById('tbody').innerHTML = thsrt;
-				 var tr = '';
-				 tr=thsrt;
-                for (var i = 0; i < arrProd.length; i++) {
-				var keys=Object.keys(arrProd[i]);
-				   tr += '<tr>'; 
-				   for(var j = 0; j < keys.length; j++){
-                    tr +=  '<td>'+arrProd[i][keys[j]]+ '</td>';// + arrProd[keys] + '</td><td>' + arrProd[i] + '</td></tr>';
-					}
-					tr+='</tr>';
-					//tr +=;
-					document.getElementById('tbody').innerHTML = tr;
-                }
-				
-                
-            }*/
-
-           /* document.getElementById('btnAddEmp').addEventListener('click', function() {
-                arrProd.push({
-                    EmpNo: 5,
-                    EmpName: 'Prashant',
-                    Salary: 4555
-                });
-                console.log(JSON.stringify(arrProd));
-                gnerateTable(arrProd);
-
-            }, false);*/
-        //}
+        
     </script>
 </head>
 
@@ -81,9 +23,9 @@
 	 <input type="text" placeholder ="prodrowID" id="prodrowID" disabled>
 	 <input type="text" placeholder ="prodID" id="prodID">
 	 <input type="text" placeholder ="prodName" id="prodName">
-	 <input type="text" placeholder ="prodCat" id="prodCat">
+	  <!--<input type="text" placeholder ="prodCat" id="prodCat">-->
 	 <input type="text" placeholder ="ProdDescription" id="ProdDescription">
-	 <input type="text" placeholder ="prodManu" id="prodManu">
+	 <!--<input type="text" placeholder ="prodManu" id="prodManu">-->
 	 <input type="text" placeholder ="prodBasePrice" id="prodBasePrice">
 	 
 	 </div>
@@ -91,6 +33,12 @@
 	 <input type="button" value="Create" id="btnCreate">
 	 <input type="button" value="Update" id="btnUpdate">
 	 </div>
+	 <div id="sortIDs">
+	  <input type="radio" id="prodCat" name="sortID" value="prodCat">
+     <label for="prodCat">Category</label><br>
+       <input type="radio" id="prodManu" name="sortID" value="prodManu" >
+      <label for="prodManu">Manufacturer</label><br>
+	 </div> 
     <table border="double" id="table1">
    
         <tbody id='tbody'></tbody>
