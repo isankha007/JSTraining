@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="jquery-3.6.0.min.js"></script>
+<script>
+$(document).ready(function(){
+  $("#btn2").click(function(){
+    $("#div1").load("https://www.w3.org/TR/PNG/iso_8859-1.txt");
+  });
+});
+
+
+$(document).ready(function(){
+  $("#btn1").click(function(){
+    $.get("https://gorest.co.in/public/v2/posts", function(data, status){
+      alert("Data: " + data + "\nStatus: " + status);
+    });
+  });
+});
+
+
+// $(document).ready(function(){
+//   $("#btn3").click(function(){
+//     $.post("https://dummy.restapiexample.com/api/v1/create",
+//     {
+//       name: "Donald Duck",
+//       job: "Duckburg"
+//     },
+//     function(data,status){
+//         var json = $.parseJSON(data); // create an object with the key of the array
+//        alert(json.html); 
+//       //alert("Data: " + data + "\nStatus: " + status);
+//     });
+//   });
+// });
+
+$(document).ready(function(){
+  $("#btn3").click(function(){
+    $.ajax({
+    url: "https://dummy.restapiexample.com/api/v1/create",
+    type: "POST",
+    dataType: "json",
+    data: {"name": "morpheus", "job": "leader"},
+    success: function(data){
+        console.log(data);
+    },
+    error: function(error){
+         console.log("Error:");
+         console.log(error);
+    }
+});
+  }); 
+});
+</script>
+</head>
+<body>
+
+<div id="div1"><h2>Let jQuery AJAX Change This Text</h2></div>
+
+<button id="btn2">Get External Content</button>
+<button id="btn1">Get External Content</button>
+<button id="btn3">Post  Content</button>
+
+</body>
+</html>
